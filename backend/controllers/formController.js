@@ -2,8 +2,8 @@ const Form = require("../models/formModel");
 const fs = require("fs");
 const { google } = require("googleapis");
 const Upload = require("../models/uploadModel");
-const GOOGLE_API_FOLDER_ID = "1e4USFAO7QtKjGfR7PQTD_1Oc971jIteE";
 const sendEmail = require("../utils/sendEmail");
+const googleApiFolderId = process.env.GOOGLE_API_FOLDER_ID;
 var html_to_pdf = require("html-pdf-node");
 const path = require("path");
 
@@ -247,7 +247,7 @@ exports.createForm = async (req, res) => {
 
     const fileMetadata = {
       name: file.name,
-      parents: [GOOGLE_API_FOLDER_ID],
+      parents: [googleApiFolderId],
     };
 
     const media = {
@@ -517,7 +517,7 @@ exports.uploadFile = async (req, res) => {
 
     const fileMetadata = {
       name: file.name,
-      parents: [GOOGLE_API_FOLDER_ID],
+      parents: [googleApiFolderId],
     };
 
     const media = {

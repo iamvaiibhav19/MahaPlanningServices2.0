@@ -12,6 +12,7 @@ var fs = require("fs");
 const app = express();
 
 dotenv.config({ path: "./config/.env" });
+app.use(cookieParser());
 
 app.use(
   cors({
@@ -19,8 +20,6 @@ app.use(
     credentials: true,
   })
 );
-
-app.use(cookieParser());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
