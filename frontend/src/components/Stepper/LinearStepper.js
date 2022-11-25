@@ -681,7 +681,7 @@ const LinearStepper = () => {
       withCredentials: true,
     };
 
-    const res = await axios.get('http://localhost:8080/api/v1/profile', config);
+    const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);
 
     setUser(res.data.user);
   };
@@ -794,7 +794,7 @@ const LinearStepper = () => {
     };
 
     axios
-      .post('http://localhost:8080/api/v1/lead/new', form, config)
+      .post('https://mahaplanningservices.herokuapp.com/api/v1/lead/new', form, config)
       .then((res) => {
         console.log(res, 'handle finsihi');
         console.log(res.data);

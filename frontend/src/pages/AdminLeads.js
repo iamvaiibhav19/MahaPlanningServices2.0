@@ -112,7 +112,7 @@ export default function AdminLeads() {
       withCredentials: true,
     };
     axios
-      .put(`http://localhost:8080/api/v1/lead/${leadId}`, leadEditData, config)
+      .put(`https://mahaplanningservices.herokuapp.com/api/v1/lead/${leadId}`, leadEditData, config)
       .then((res) => {
         setOpenModal(false);
         setLeadEditData({
@@ -215,7 +215,7 @@ export default function AdminLeads() {
     console.log(user?.role, 'user?.role');
     const getReq = user?.role === 'admin' ? '/allLeads' : '/leads/coordinator';
 
-    axios.get(`http://localhost:8080/api/v1${getReq}`, config).then((res) => {
+    axios.get(`https://mahaplanningservices.herokuapp.com/api/v1${getReq}`, config).then((res) => {
       console.log(res.data.data.leads, 'leads');
       setLeads(res.data.data.leads);
     });
@@ -248,7 +248,7 @@ export default function AdminLeads() {
       withCredentials: true,
     };
     setLeadId(id);
-    axios.get(`http://localhost:8080/api/v1/lead/${id}`, config).then((res) => {
+    axios.get(`https://mahaplanningservices.herokuapp.com/api/v1/lead/${id}`, config).then((res) => {
       console.log(res.data.data.lead, 'lead');
       setLeadEditData(res.data.data.lead);
     });
@@ -259,7 +259,7 @@ export default function AdminLeads() {
       withCredentials: true,
     };
     axios
-      .delete(`http://localhost:8080/api/v1/lead/${leadId}`, config)
+      .delete(`https://mahaplanningservices.herokuapp.com/api/v1/lead/${leadId}`, config)
       .then((res) => {
         setMessage({
           status: 'success',

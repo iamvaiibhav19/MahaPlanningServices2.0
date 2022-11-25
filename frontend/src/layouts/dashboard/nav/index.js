@@ -54,7 +54,7 @@ export default function Nav({ openNav, onCloseNav }) {
       withCredentials: true,
     };
 
-    const res = await axios.get('http://localhost:8080/api/v1/profile', config);
+    const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);
 
     setUserData(res.data.user);
   };

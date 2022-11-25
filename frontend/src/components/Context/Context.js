@@ -11,7 +11,7 @@ export function UserProvider({ children }) {
       withCredentials: true,
     };
 
-    const res = await axios.get('http://localhost:8080/api/v1/profile', config);
+    const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);
 
     setUser(res.data.user);
   };
