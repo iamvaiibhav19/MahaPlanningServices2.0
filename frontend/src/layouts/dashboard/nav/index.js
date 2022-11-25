@@ -46,12 +46,15 @@ export default function Nav({ openNav, onCloseNav }) {
   const [userData, setUserData] = useState();
 
   const [edit, setEdit] = useState(false);
+  const token = localStorage.getItem('token');
 
   const getUserProfile = async () => {
     //cookies
-    const token = localStorage.getItem('token');
     const config = {
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
 
     const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);

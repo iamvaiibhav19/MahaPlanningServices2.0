@@ -401,14 +401,8 @@ export default function Coordinators() {
                             textAlign: 'center',
                           }}
                         >
-                          <Typography variant="h6" paragraph>
-                            Not found
-                          </Typography>
-
-                          <Typography variant="body2">
-                            No results found
-                            <strong>&quot;{filterName}&quot;</strong>.
-                            <br /> Try checking for typos or using complete words.
+                          <Typography variant="h5" sx={{ my: 3, color: 'red' }}>
+                            No records found!
                           </Typography>
                         </Paper>
                       </TableCell>

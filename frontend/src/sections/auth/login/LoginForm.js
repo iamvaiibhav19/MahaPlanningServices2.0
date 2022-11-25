@@ -8,6 +8,7 @@ import Iconify from '../../../components/iconify';
 import axios from 'axios';
 import UserContext from 'src/components/Context/Context';
 import { useContext } from 'react';
+import { useCookies } from 'react-cookie';
 
 // ----------------------------------------------------------------------
 
@@ -26,6 +27,9 @@ export default function LoginForm(props) {
     password: '',
   });
 
+  //react - cookies
+  const [cookies, setCookie] = useCookies(['token']);
+
   const loginAdmin = () => {
     console.log(user, 'user');
 
@@ -42,6 +46,7 @@ export default function LoginForm(props) {
       .then((res) => {
         if (res.status === 200) {
           console.log(res.data, 'res');
+          setCookie('token', res.data.token, { path: '/' });
           localStorage.setItem('token', res.data.token);
           getUser();
           navigate('/dashboard', { replace: true });

@@ -102,9 +102,11 @@ const DropFileInput = (props) => {
     formData.append('file', fileList[0]);
     formData.append('lead', JSON.stringify(form));
     console.log(formData, 'formData');
+    const token = localStorage.getItem('token');
     const config = {
       headers: {
         'Content-Type': 'multipart/form-data',
+        token: token,
       },
       withCredentials: true,
     };
