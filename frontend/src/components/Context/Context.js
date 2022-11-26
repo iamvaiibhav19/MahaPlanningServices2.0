@@ -16,12 +16,21 @@ export function UserProvider({ children }) {
       },
     };
 
-    const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);
-    console.log(token, 'token');
+    const res = await axios
+      .get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config)
+      .then((res) => {
+        console.log(res.data, 'res');
+      })
+      .catch((err) => {
+        console.log(err, 'err');
+        console.log(token, 'token');
+      });
+
     setUser(res.data.user);
   };
 
   useEffect(() => {
+    console.log(token, 'token');
     getUser();
   }, []);
 
