@@ -48,6 +48,8 @@ export default function Nav({ openNav, onCloseNav }) {
   const [edit, setEdit] = useState(false);
   const token = localStorage.getItem('token');
 
+  console.log('token', token);
+
   const getUserProfile = async () => {
     //cookies
     const config = {
