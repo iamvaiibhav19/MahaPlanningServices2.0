@@ -6,7 +6,6 @@ const UserContext = createContext();
 export function UserProvider({ children }) {
   const [user, setUser] = useState();
   const token = localStorage.getItem('token');
-  console.log(token, 'token');
 
   const getUser = async () => {
     const config = {
@@ -18,7 +17,7 @@ export function UserProvider({ children }) {
     };
 
     const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);
-
+    console.log(token, 'token');
     setUser(res.data.user);
   };
 

@@ -60,7 +60,7 @@ export default function Nav({ openNav, onCloseNav }) {
     };
 
     const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);
-
+    console.log(token, 'token');
     setUserData(res.data.user);
   };
 
