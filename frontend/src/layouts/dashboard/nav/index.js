@@ -95,14 +95,11 @@ export default function Nav({ openNav, onCloseNav }) {
               <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
                 {
                   //if userData.email is more than 10 characters, then show only first 10 characters
-                  user?.name
+                  userData?.name
                 }
               </Typography>
               <Typography variant="subtitle2" sx={{ color: 'text.secondary' }}>
-                {
-                  //if userData.email is more than 10 characters, then show only first 10 characters
-                  user?.email
-                }
+                {userData?.email}
               </Typography>
 
               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
