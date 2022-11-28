@@ -107,6 +107,8 @@ export default function AdminLeads() {
 
   console.log('this is admin loead');
 
+  const token = localStorage.getItem('token');
+
   const handleEditLead = () => {
     const config = {
       withCredentials: true,

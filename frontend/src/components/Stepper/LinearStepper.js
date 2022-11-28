@@ -797,6 +797,7 @@ const LinearStepper = () => {
   };
 
   const handleFinish = () => {
+    const token = localStorage.getItem('token');
     const config = {
       withCredentials: true,
       headers: {

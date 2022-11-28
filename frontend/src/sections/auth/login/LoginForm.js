@@ -14,6 +14,7 @@ import { useCookies } from 'react-cookie';
 
 export default function LoginForm(props) {
   const { getUser } = useContext(UserContext);
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     getUser();

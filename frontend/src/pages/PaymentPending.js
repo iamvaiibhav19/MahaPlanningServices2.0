@@ -98,6 +98,7 @@ function applySortFilter(array, comparator, query) {
 }
 
 export default function Newleads() {
+  const token = localStorage.getItem('token');
   const { user } = useContext(UserContext);
   const [openModal, setOpenModal] = useState(false);
   const [leadId, setLeadId] = useState('');

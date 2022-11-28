@@ -80,6 +80,7 @@ function applySortFilter(array, comparator, query) {
 }
 
 export default function Coordinators() {
+  const token = localStorage.getItem('token');
   const [openModal, setOpenModal] = useState(false);
   const navigate = useNavigate();
   const [open, setOpen] = useState(null);

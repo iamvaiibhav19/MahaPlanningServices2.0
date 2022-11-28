@@ -10,6 +10,7 @@ import axios from 'axios';
 const { useNavigate } = require('react-router-dom');
 
 const DropFileInput = (props) => {
+  const token = localStorage.getItem('token');
   const navigate = useNavigate();
   const wrapperRef = useRef(null);
 

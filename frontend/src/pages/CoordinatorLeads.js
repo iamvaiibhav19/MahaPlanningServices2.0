@@ -91,6 +91,7 @@ export default function CoordinatorLeads() {
   const [openModal, setOpenModal] = useState(false);
   const [leadId, setLeadId] = useState('');
   console.log('user', user);
+  const token = localStorage.getItem('token');
 
   const handleEditLead = () => {
     const config = {
