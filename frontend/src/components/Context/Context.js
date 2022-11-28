@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from 'react';
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
-  const [user, setUser] = useState();
+  const [userContext, setUserContext] = useState({});
   const token = localStorage.getItem('token');
 
   const getUser = async () => {
@@ -16,25 +16,15 @@ export function UserProvider({ children }) {
       },
     };
 
-    const res = await axios
-      .get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config)
-      .then((res) => {
-        console.log(res.data, 'res');
-      })
-      .catch((err) => {
-        console.log(err, 'err');
-        console.log(token, 'token');
-      });
-
-    setUser(res.data.user);
+    const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);
+    setUserContext(res.data.user);
   };
 
   useEffect(() => {
-    console.log(token, 'token');
     getUser();
   }, []);
 
-  return <UserContext.Provider value={{ user, getUser }}>{children}</UserContext.Provider>;
+  return <UserContext.Provider value={{ userContext, getUser }}>{children}</UserContext.Provider>;
 }
 
 export default UserContext;

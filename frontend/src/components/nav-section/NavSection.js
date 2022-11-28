@@ -8,6 +8,9 @@ import { StyledNavItem, StyledNavItemIcon } from './styles';
 import SvgColor from '../../components/svg-color';
 import UserContext from '../Context/Context';
 import { useContext } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +21,28 @@ NavSection.propTypes = {
 };
 
 export default function NavSection({ data = [], dataDropdown = [], ...other }) {
-  const { user } = useContext(UserContext);
+  const [user, setUser] = useState({});
+  const { userContext } = useContext(UserContext);
+  console.log('userContext in navvvvvsection', userContext);
+
+  const token = localStorage.getItem('token');
+
+  const getUser = async () => {
+    //cookies
+    const config = {
+      withCredentials: true,
+      headers: {
+        token: token,
+      },
+    };
+
+    const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);
+    setUser(res.data.user);
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   return (
     <Box {...other}>

@@ -11,6 +11,7 @@ import {
   MenuItem,
   Alert,
   FormControlLabel,
+  CircularProgress,
 } from '@mui/material';
 import Select from '@mui/material/Select';
 import DropFileInput from '../drop-file-input/DropFileInput';
@@ -18,6 +19,8 @@ import './inputBox.css';
 import { Container } from '@mui/system';
 import axios from 'axios';
 import Snackbar from '@mui/material/Snackbar';
+import UserContext from '../Context/Context';
+import { useContext } from 'react';
 
 function getSteps() {
   return ['Basic Details', 'Registration Fees', 'Upload Document'];
@@ -665,6 +668,8 @@ function getStepContent(
 }
 
 const LinearStepper = () => {
+  const { userContext, getUser } = useContext(UserContext);
+  console.log(userContext, 'user from context');
   const [activeStep, setActiveStep] = useState(0);
   const [displayFinish, setDisplayFinish] = useState(false);
   const [skippedSteps, setSkippedSteps] = useState([]);
@@ -675,7 +680,7 @@ const LinearStepper = () => {
   const [user, setUser] = useState();
   const token = localStorage.getItem('token');
 
-  const getUser = async () => {
+  const getUserData = async () => {
     //cookies
     const config = {
       withCredentials: true,
@@ -871,7 +876,7 @@ const LinearStepper = () => {
   }, [form]);
 
   useEffect(() => {
-    getUser();
+    getUserData();
   }, []);
 
   return (

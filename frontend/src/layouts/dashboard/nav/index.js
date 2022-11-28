@@ -15,6 +15,7 @@ import axios from 'axios';
 import UserContext from '../../../components/Context/Context.js';
 import { useContext } from 'react';
 
+
 // ----------------------------------------------------------------------
 
 const NAV_WIDTH = 280;
@@ -35,9 +36,8 @@ Nav.propTypes = {
 };
 
 export default function Nav({ openNav, onCloseNav }) {
-  const { user } = useContext(UserContext);
-
-  console.log(user, 'user dartata ');
+  const { userContext } = useContext(UserContext);
+  console.log(userContext, 'usercontext in navvv');
 
   const { pathname } = useLocation();
 
@@ -103,7 +103,7 @@ export default function Nav({ openNav, onCloseNav }) {
               </Typography>
 
               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                {user?.role.charAt(0).toUpperCase() + user?.role.slice(1)}
+                {userData?.role?.charAt(0).toUpperCase() + userData?.role.slice(1)}
               </Typography>
             </Box>
           </StyledAccount>
