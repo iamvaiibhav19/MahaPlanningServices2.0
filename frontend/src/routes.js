@@ -23,7 +23,7 @@ export default function Router() {
       children: [
         { element: <Navigate to="/dashboard/forms" />, index: true },
         { path: 'forms', element: <DashboardAppPage /> },
-        { path: 'leads', element: user?.role === 'admin' ? <AdminLeads /> : <CoordinatorLeads /> },
+        { path: 'leads', element: UserContext?.role === 'admin' ? <AdminLeads /> : <CoordinatorLeads /> },
 
         { path: 'new', element: <NewLeads /> },
         { path: 'donePayments', element: <PaymentDone /> },
