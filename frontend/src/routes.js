@@ -15,7 +15,7 @@ import UserContext from './components/Context/Context';
 import { useContext } from 'react';
 
 export default function Router() {
-  const { UserContext } = useContext(UserContext);
+  const { userContext } = useContext(UserContext);
   const routes = useRoutes([
     {
       path: '/dashboard',
@@ -23,7 +23,7 @@ export default function Router() {
       children: [
         { element: <Navigate to="/dashboard/forms" />, index: true },
         { path: 'forms', element: <DashboardAppPage /> },
-        { path: 'leads', element: UserContext?.role === 'admin' ? <AdminLeads /> : <CoordinatorLeads /> },
+        { path: 'leads', element: userContext?.role === 'admin' ? <AdminLeads /> : <CoordinatorLeads /> },
 
         { path: 'new', element: <NewLeads /> },
         { path: 'donePayments', element: <PaymentDone /> },
