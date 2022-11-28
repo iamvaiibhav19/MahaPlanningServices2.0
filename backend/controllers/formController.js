@@ -11,6 +11,24 @@ const path = require("path");
 exports.createFormWithoutDoc = async (req, res) => {
   try {
     const form = new Form({
+      ...req.body,
+      user: req.user._id,
+    });
+
+    await form.save();
+
+    res.status(201).json({
+      success: true,
+      form,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.createFormWithoutDoc1 = async (req, res) => {
+  try {
+    const form = new Form({
       user: req.user._id,
       ...req.body,
     });
