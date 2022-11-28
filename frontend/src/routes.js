@@ -15,7 +15,7 @@ import UserContext from './components/Context/Context';
 import { useContext } from 'react';
 
 export default function Router() {
-  const { user } = useContext(UserContext);
+  const { UserContext } = useContext(UserContext);
   const routes = useRoutes([
     {
       path: '/dashboard',
