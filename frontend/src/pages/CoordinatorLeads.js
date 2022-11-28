@@ -95,6 +95,9 @@ export default function CoordinatorLeads() {
   const handleEditLead = () => {
     const config = {
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
     axios.put(`https://mahaplanningservices.herokuapp.com/api/v1/lead/${leadId}`, leadEditData, config).then((res) => {
       setOpenModal(false);
@@ -166,6 +169,9 @@ export default function CoordinatorLeads() {
   const getLeads = async () => {
     const config = {
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
     console.log(user?.role, 'user?.role');
     const getReq = user?.role === 'admin' ? '/allLeads' : '/leads/coordinator';
@@ -212,6 +218,9 @@ export default function CoordinatorLeads() {
   const getEditData = async (id) => {
     const config = {
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
     setLeadId(id);
     axios.get(`https://mahaplanningservices.herokuapp.com/api/v1/lead/${id}`, config).then((res) => {
@@ -223,6 +232,9 @@ export default function CoordinatorLeads() {
   const deleteLead = async () => {
     const config = {
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
     axios
       .delete(`https://mahaplanningservices.herokuapp.com/api/v1/lead/${leadId}`, config)

@@ -108,6 +108,9 @@ const DropFileInput = (props) => {
         'Content-Type': 'multipart/form-data',
       },
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
     axios
       .post('https://mahaplanningservices.herokuapp.com/api/v1/lead/doc/new', formData, config)

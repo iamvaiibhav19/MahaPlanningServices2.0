@@ -799,6 +799,9 @@ const LinearStepper = () => {
   const handleFinish = () => {
     const config = {
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
 
     axios

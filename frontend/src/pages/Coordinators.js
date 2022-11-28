@@ -127,6 +127,9 @@ export default function Coordinators() {
   const getCoordinators = async () => {
     const config = {
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
 
     axios.get('https://mahaplanningservices.herokuapp.com/api/v1/getCoordinators', config).then((res) => {
@@ -154,6 +157,9 @@ export default function Coordinators() {
   const handleAddCoordinator = () => {
     const config = {
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
 
     axios
@@ -234,6 +240,9 @@ export default function Coordinators() {
     setOpenModal(true);
     const config = {
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
     axios.get(`https://mahaplanningservices.herokuapp.com/api/v1/coordinator/${coordinatorId}`, config).then((res) => {
       console.log(res, 'res');
@@ -244,6 +253,9 @@ export default function Coordinators() {
   const handleDeleteCoordinator = () => {
     const config = {
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
     axios
       .delete(`https://mahaplanningservices.herokuapp.com/api/v1/coordinator/${coordinatorId}`, config)
@@ -261,6 +273,9 @@ export default function Coordinators() {
   const handleEditCoordinator = () => {
     const config = {
       withCredentials: true,
+      headers: {
+        token: token,
+      },
     };
     axios
       .put(`https://mahaplanningservices.herokuapp.com/api/v1/coordinator/${coordinatorId}`, editData, config)
