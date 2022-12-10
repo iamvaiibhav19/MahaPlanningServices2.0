@@ -7,7 +7,7 @@ export default function AccountPopover() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    axios.get('https://mahaplanningservices.herokuapp.com/api/v1/logout').then((res) => {
+    axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/logout`).then((res) => {
       console.log(res, 'res');
       localStorage.removeItem('token');
       navigate('/login', { replace: true });

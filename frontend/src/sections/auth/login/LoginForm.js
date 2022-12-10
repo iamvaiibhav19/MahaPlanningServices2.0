@@ -43,7 +43,7 @@ export default function LoginForm(props) {
     };
 
     axios
-      .post('https://mahaplanningservices.herokuapp.com/api/v1/loginAdmin', user, config)
+      .post(`${process.env.REACT_APP_BASE_URL}/api/v1/loginAdmin`, user, config)
       .then((res) => {
         if (res.status === 200) {
           console.log(res.data, 'res');
@@ -67,7 +67,7 @@ export default function LoginForm(props) {
       credentials: 'include',
     };
     axios
-      .post('https://mahaplanningservices.herokuapp.com/api/v1/loginCoordinator', user, config)
+      .post(`${process.env.REACT_APP_BASE_URL}/api/v1/loginCoordinator`, user, config)
       .then((res) => {
         if (res.status === 200) {
           console.log(res.data, 'res');

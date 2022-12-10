@@ -10,6 +10,7 @@ const path = require("path");
 // create a new form -- ADMIN - coordinator
 exports.createFormWithoutDoc = async (req, res) => {
   try {
+    console.log(req.user._id, "user id");
     const form = new Form({
       ...req.body,
       user: req.user._id,

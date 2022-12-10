@@ -16,7 +16,7 @@ export function UserProvider({ children }) {
       },
     };
 
-    const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/profile`, config);
     setUserContext(res.data.user);
   };
 

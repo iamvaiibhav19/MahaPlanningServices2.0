@@ -79,9 +79,23 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   }
 
   return (
-    <Link to="/" component={RouterLink} sx={{ display: 'contents' }}>
-      {logo}
-    </Link>
+    <div
+      style={{
+        // border: '1px solid #000',
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        color: '#2065D1',
+        fontWeight: 'bold',
+        fontSize: '1.1rem',
+        cursor: 'pointer',
+      }}
+      onClick={() => {
+        window.location.href = '/';
+      }}
+    >
+      <h1>Maha Planning</h1>
+    </div>
   );
 });
 

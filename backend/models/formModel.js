@@ -46,8 +46,9 @@ const formSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    contactNo2: {
+    pinCode: {
       type: String,
+      required: true,
     },
     emailId: {
       type: String,
@@ -59,7 +60,6 @@ const formSchema = new mongoose.Schema({
     },
     validityDate: {
       type: Date,
-      required: true,
     },
   },
   registrationFees: {
@@ -126,6 +126,20 @@ const formSchema = new mongoose.Schema({
     },
     paymentDate: {
       type: Date,
+    },
+  },
+  bankDetails: {
+    bankName: {
+      type: String,
+    },
+    branch: {
+      type: String,
+    },
+    accountNumber: {
+      type: String,
+    },
+    ifscCode: {
+      type: String,
     },
   },
   createdAt: {

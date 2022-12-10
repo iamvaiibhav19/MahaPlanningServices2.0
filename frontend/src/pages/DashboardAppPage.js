@@ -22,6 +22,7 @@ import {
 
 export default function DashboardAppPage() {
   const theme = useTheme();
+  console.log(process.env.REACT_APP_BASE_URL, 'process.env.BASE_URL1');
 
   return (
     <>

@@ -36,7 +36,7 @@ export default function NavSection({ data = [], dataDropdown = [], ...other }) {
       },
     };
 
-    const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/profile`, config);
     setUser(res.data.user);
   };
 

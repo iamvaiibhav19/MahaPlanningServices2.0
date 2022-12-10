@@ -40,7 +40,7 @@ const DropFileInput = (props) => {
     formData.append('file', fileList[0]);
 
     axios
-      .post(`https://mahaplanningservices.herokuapp.com/api/v1/lead/upload/${formId}`, formData, {
+      .post(`${process.env.REACT_APP_BASE_URL}/api/v1/lead/upload/${formId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -77,7 +77,7 @@ const DropFileInput = (props) => {
       const formData = new FormData();
       formData.append('file', newFile);
       console.log(formData, 'formData');
-      axios.post('https://mahaplanningservices.herokuapp.com/upload', formData).then((res) => {
+      axios.post(`${process.env.REACT_APP_BASE_URL}/upload`, formData).then((res) => {
         console.log(res, 'res');
         props.onFileChange(updatedList);
       });
@@ -87,7 +87,7 @@ const DropFileInput = (props) => {
   const fileRemove = (file) => {
     console.log(file, 'file');
     const filename = file.name;
-    axios.post('https://mahaplanningservices.herokuapp.com/remove', { filename }).then((res) => {
+    axios.post(`${process.env.REACT_APP_BASE_URL}/remove`, { filename }).then((res) => {
       console.log(res, 'res');
     });
     const updatedList = [...fileList];
@@ -111,7 +111,7 @@ const DropFileInput = (props) => {
       withCredentials: true,
     };
     axios
-      .post('https://mahaplanningservices.herokuapp.com/api/v1/lead/doc/new', formData, config)
+      .post(`${process.env.REACT_APP_BASE_URL}/api/v1/lead/doc/new`, formData, config)
       .then((res) => {
         console.log(res, 'res');
         console.log(res.data.form._id, 'res.data.data');

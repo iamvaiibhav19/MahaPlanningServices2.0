@@ -12,10 +12,31 @@ import Coordinators from './pages/Coordinators';
 import AdminLeads from './pages/AdminLeads';
 import UserContext from './components/Context/Context';
 
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function Router() {
+  const [user, setUser] = useState({});
   const { userContext } = useContext(UserContext);
+
+  const token = localStorage.getItem('token');
+
+  const getUser = async () => {
+    //cookies
+    const config = {
+      withCredentials: true,
+      headers: {
+        token: token,
+      },
+    };
+
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/profile`, config);
+    setUser(res.data.user);
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
   const routes = useRoutes([
     {
       path: '/dashboard',
@@ -23,7 +44,7 @@ export default function Router() {
       children: [
         { element: <Navigate to="/dashboard/forms" />, index: true },
         { path: 'forms', element: <DashboardAppPage /> },
-        { path: 'leads', element: userContext?.role === 'admin' ? <AdminLeads /> : <CoordinatorLeads /> },
+        { path: 'leads', element: user?.role === 'admin' ? <AdminLeads /> : <CoordinatorLeads /> },
 
         { path: 'new', element: <NewLeads /> },
         { path: 'donePayments', element: <PaymentDone /> },

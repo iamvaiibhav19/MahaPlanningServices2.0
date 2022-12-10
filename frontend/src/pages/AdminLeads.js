@@ -51,15 +51,9 @@ import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 const TABLE_HEAD = [
   { id: 'no', label: 'Application No.', alignRight: false },
   { id: 'name', label: 'Applicant Name', alignRight: false },
-  { id: 'businessName', label: 'Business Name', alignRight: false },
-  { id: 'communicationAddress', label: 'Communication Address', alignRight: false },
-  { id: 'projectAddress', label: 'Project Unit Address', alignRight: false },
   { id: 'contactNo', label: 'Contact No.', alignRight: false },
-  { id: 'contactNo', label: 'Additional Contact No.', alignRight: false },
   { id: 'emailId', label: 'Email Id', alignRight: false },
   { id: 'applicationDate', label: 'Application Date', alignRight: false },
-  { id: 'validatyDate', label: 'Validaty Date', alignRight: false },
-  { id: 'Service Type', label: 'Service Type', alignRight: false },
   { id: 'registrationFee', label: 'Registration Fee Details', alignRight: false },
   { id: 'Payment Status', label: 'Payment Status', alignRight: false },
   { id: 'Documents', label: 'Documents', alignRight: false },
@@ -98,16 +92,31 @@ function applySortFilter(array, comparator, query) {
 }
 
 export default function AdminLeads() {
-  const { user } = useContext(UserContext);
   const [openModal, setOpenModal] = useState(false);
   const [leadId, setLeadId] = useState('');
 
   const [detailModal, setDetailModal] = useState(false);
-  console.log('user', user);
 
-  console.log('this is admin loead');
+  const [user, setUser] = useState({});
 
   const token = localStorage.getItem('token');
+
+  async function getUser() {
+    //cookies
+    const config = {
+      withCredentials: true,
+      headers: {
+        token: token,
+      },
+    };
+
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/profile`, config);
+    setUser(res.data.user);
+  }
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   const handleEditLead = () => {
     const config = {
@@ -117,7 +126,7 @@ export default function AdminLeads() {
       },
     };
     axios
-      .put(`https://mahaplanningservices.herokuapp.com/api/v1/lead/${leadId}`, leadEditData, config)
+      .put(`${process.env.REACT_APP_BASE_URL}/api/v1/lead/${leadId}`, leadEditData, config)
       .then((res) => {
         setOpenModal(false);
         setLeadEditData({
@@ -223,7 +232,7 @@ export default function AdminLeads() {
     console.log(user?.role, 'user?.role');
     const getReq = user?.role === 'admin' ? '/allLeads' : '/leads/coordinator';
 
-    axios.get(`https://mahaplanningservices.herokuapp.com/api/v1${getReq}`, config).then((res) => {
+    axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1${getReq}`, config).then((res) => {
       console.log(res.data.data.leads, 'leads');
       setLeads(res.data.data.leads);
     });
@@ -259,7 +268,7 @@ export default function AdminLeads() {
       },
     };
     setLeadId(id);
-    axios.get(`https://mahaplanningservices.herokuapp.com/api/v1/lead/${id}`, config).then((res) => {
+    axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/lead/${id}`, config).then((res) => {
       console.log(res.data.data.lead, 'lead');
       setLeadEditData(res.data.data.lead);
     });
@@ -273,7 +282,7 @@ export default function AdminLeads() {
       },
     };
     axios
-      .delete(`https://mahaplanningservices.herokuapp.com/api/v1/lead/${leadId}`, config)
+      .delete(`${process.env.REACT_APP_BASE_URL}/api/v1/lead/${leadId}`, config)
       .then((res) => {
         setMessage({
           status: 'success',
@@ -427,29 +436,13 @@ export default function AdminLeads() {
                         <TableCell align="center">{applicationNo}</TableCell>
                         <TableCell align="center">{applicationDetails?.applicantName}</TableCell>
 
-                        <TableCell align="center">{applicationDetails?.businessName}</TableCell>
-
-                        <TableCell align="center">{applicationDetails?.communicationAddress}</TableCell>
-
-                        <TableCell align="center">{applicationDetails?.projectUnitAddress}</TableCell>
-
                         <TableCell align="center">{applicationDetails?.contactNo}</TableCell>
-                        <TableCell align="center">
-                          {applicationDetails?.contactNo2 ? applicationDetails?.contactNo2 : '-'}
-                        </TableCell>
+
                         <TableCell align="center">{applicationDetails?.emailId}</TableCell>
                         <TableCell align="center">
                           {format(new Date(applicationDetails?.applicationDate), 'dd/MM/yyyy')}
                         </TableCell>
-                        <TableCell align="center">
-                          {format(new Date(applicationDetails?.validityDate), 'dd/MM/yyyy')}
-                        </TableCell>
-                        <TableCell align="center">
-                          {registrationFees?.serviceType
-                            ? registrationFees?.serviceType.charAt(0).toUpperCase() +
-                              registrationFees?.serviceType.slice(1)
-                            : 'N/A'}
-                        </TableCell>
+
                         <TableCell align="center">
                           <TextSnippetIcon
                             sx={{
@@ -1153,6 +1146,86 @@ export default function AdminLeads() {
               />
             </>
           )}
+
+          <TextField
+            id="bankName"
+            label="Bank Name"
+            variant="outlined"
+            placeholder="Enter Bank Name"
+            fullWidth
+            margin="normal"
+            name="bankName"
+            value={leadEditData?.bankDetails?.bankName}
+            onChange={(e) =>
+              setLeadEditData({
+                ...leadEditData,
+                bankDetails: {
+                  ...leadEditData.bankDetails,
+                  bankName: e.target.value,
+                },
+              })
+            }
+          />
+
+          <TextField
+            id="branch"
+            label="Branch"
+            variant="outlined"
+            placeholder="Enter Branch"
+            fullWidth
+            margin="normal"
+            name="branch"
+            value={leadEditData?.bankDetails?.branch}
+            onChange={(e) =>
+              setLeadEditData({
+                ...leadEditData,
+                bankDetails: {
+                  ...leadEditData.bankDetails,
+                  branch: e.target.value,
+                },
+              })
+            }
+          />
+
+          <TextField
+            id="accountNumber"
+            label="Account Number"
+            variant="outlined"
+            placeholder="Enter Account Number"
+            fullWidth
+            margin="normal"
+            name="accountNumber"
+            value={leadEditData?.bankDetails?.accountNumber}
+            onChange={(e) =>
+              setLeadEditData({
+                ...leadEditData,
+                bankDetails: {
+                  ...leadEditData.bankDetails,
+                  accountNumber: e.target.value,
+                },
+              })
+            }
+          />
+
+          <TextField
+            id="ifscCode"
+            label="IFSC Code"
+            variant="outlined"
+            placeholder="Enter IFSC Code"
+            fullWidth
+            margin="normal"
+            name="ifscCode"
+            value={leadEditData?.bankDetails?.ifscCode}
+            onChange={(e) =>
+              setLeadEditData({
+                ...leadEditData,
+                bankDetails: {
+                  ...leadEditData.bankDetails,
+                  ifscCode: e.target.value,
+                },
+              })
+            }
+          />
 
           <Button
             variant="contained"

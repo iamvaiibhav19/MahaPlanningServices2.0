@@ -15,7 +15,6 @@ import axios from 'axios';
 import UserContext from '../../../components/Context/Context.js';
 import { useContext } from 'react';
 
-
 // ----------------------------------------------------------------------
 
 const NAV_WIDTH = 280;
@@ -59,7 +58,7 @@ export default function Nav({ openNav, onCloseNav }) {
       },
     };
 
-    const res = await axios.get('https://mahaplanningservices.herokuapp.com/api/v1/profile', config);
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/profile`, config);
     console.log(token, 'token');
     setUserData(res.data.user);
   };

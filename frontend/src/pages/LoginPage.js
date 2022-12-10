@@ -52,20 +52,20 @@ export default function LoginPage() {
       </Helmet>
 
       <StyledRoot>
-        <Logo
-          sx={{
-            position: 'fixed',
-            top: { xs: 16, sm: 24, md: 40 },
-            left: { xs: 16, sm: 24, md: 40 },
-          }}
-        />
-
         {mdUp && (
           <StyledSection>
-            <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-              Hi, Welcome to Maha Planning Services
+            <img
+              src="/assets/logo.png"
+              alt="login"
+              style={{
+                width: '70%',
+                height: 'auto',
+                margin: '0 auto',
+              }}
+            />
+            <Typography variant="h4" sx={{ px: 5, mb: 5, textAlign: 'center' }}>
+              Hello, Welcome to Maha Planning!
             </Typography>
-            <img src="/assets/illustrations/illustration_login.png" alt="login" />
           </StyledSection>
         )}
 

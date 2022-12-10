@@ -133,7 +133,7 @@ export default function Coordinators() {
       },
     };
 
-    axios.get('https://mahaplanningservices.herokuapp.com/api/v1/getCoordinators', config).then((res) => {
+    axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/getCoordinators`, config).then((res) => {
       console.log(res, 'res');
       console.log(res.data.coordinators, 'coordinators');
       setCoordinators(res.data.coordinators);
@@ -164,7 +164,7 @@ export default function Coordinators() {
     };
 
     axios
-      .post('https://mahaplanningservices.herokuapp.com/api/v1/assignRole', newCoordinator, config)
+      .post(`${process.env.REACT_APP_BASE_URL}/api/v1/assignRole`, newCoordinator, config)
       .then((res) => {
         console.log(res, 'res');
         setOpenModal(false);
@@ -245,7 +245,7 @@ export default function Coordinators() {
         token: token,
       },
     };
-    axios.get(`https://mahaplanningservices.herokuapp.com/api/v1/coordinator/${coordinatorId}`, config).then((res) => {
+    axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/coordinator/${coordinatorId}`, config).then((res) => {
       console.log(res, 'res');
       setEditData(res.data.coordinator);
     });
@@ -258,17 +258,15 @@ export default function Coordinators() {
         token: token,
       },
     };
-    axios
-      .delete(`https://mahaplanningservices.herokuapp.com/api/v1/coordinator/${coordinatorId}`, config)
-      .then((res) => {
-        console.log(res, 'res');
-        setOpenModal(false);
-        handleCloseMenu();
-        setCoordinatorId('');
-        setMessage('Coordinator deleted successfully');
-        setOpenSnackbar(true);
-        getCoordinators();
-      });
+    axios.delete(`${process.env.REACT_APP_BASE_URL}/api/v1/coordinator/${coordinatorId}`, config).then((res) => {
+      console.log(res, 'res');
+      setOpenModal(false);
+      handleCloseMenu();
+      setCoordinatorId('');
+      setMessage('Coordinator deleted successfully');
+      setOpenSnackbar(true);
+      getCoordinators();
+    });
   };
 
   const handleEditCoordinator = () => {
@@ -279,7 +277,7 @@ export default function Coordinators() {
       },
     };
     axios
-      .put(`https://mahaplanningservices.herokuapp.com/api/v1/coordinator/${coordinatorId}`, editData, config)
+      .put(`${process.env.REACT_APP_BASE_URL}/api/v1/coordinator/${coordinatorId}`, editData, config)
       .then((res) => {
         console.log(res, 'res');
         setOpenModal(false);
