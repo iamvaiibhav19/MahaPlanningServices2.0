@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 // @mui
 import { styled } from '@mui/material/styles';
 import { Link, Container, Typography, Divider, Stack, Button } from '@mui/material';
+import {ReactComponent as LoginImage} from "./loginimage.svg"
 // hooks
 import useResponsive from '../hooks/useResponsive';
 // components
@@ -10,6 +11,7 @@ import Iconify from '../components/iconify';
 // sections
 import { LoginForm } from '../sections/auth/login';
 import { useState } from 'react';
+
 
 // ----------------------------------------------------------------------
 
@@ -48,23 +50,20 @@ export default function LoginPage() {
   return (
     <>
       <Helmet>
-        <title> Login | Maha Planning Services </title>
+        <title> Login | LeadMagnetix </title>
       </Helmet>
 
       <StyledRoot>
         {mdUp && (
           <StyledSection>
-            <img
-              src="/assets/logo.png"
-              alt="login"
-              style={{
-                width: '70%',
+            <LoginImage style={{
+                width: '80%',
                 height: 'auto',
                 margin: '0 auto',
-              }}
-            />
-            <Typography variant="h4" sx={{ px: 5, mb: 5, textAlign: 'center' }}>
-              Hello, Welcome to Maha Planning!
+              }}/>
+            
+            <Typography variant="h5" sx={{ px: 5, mb: 5, textAlign: 'center', marginTop: "10px" }}>
+              Hello, Welcome to LeadMagnetix!
             </Typography>
           </StyledSection>
         )}

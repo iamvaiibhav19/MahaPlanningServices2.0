@@ -6,7 +6,7 @@ const googleApiFolderId = process.env.GOOGLE_API_FOLDER_ID;
 async function uploadFileToGoogleDrive(fileName, filePath) {
   try {
     const auth = new google.auth.GoogleAuth({
-      keyFile: "./googlekey.json",
+      keyFile: "./google-drive-credentials.json",
       scopes: "https://www.googleapis.com/auth/drive",
     });
 
@@ -33,3 +33,6 @@ async function uploadFileToGoogleDrive(fileName, filePath) {
     console.log("Upload File Error", err);
   }
 }
+
+
+

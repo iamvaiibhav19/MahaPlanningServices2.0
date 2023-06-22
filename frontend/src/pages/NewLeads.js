@@ -99,7 +99,8 @@ function applySortFilter(array, comparator, query) {
 
 export default function Newleads() {
   const token = localStorage.getItem('token');
-  const { user } = useContext(UserContext);
+  const { userContext, getUser } = useContext(UserContext);
+  const user = userContext;
   const [openModal, setOpenModal] = useState(false);
   const [leadId, setLeadId] = useState('');
 
@@ -328,6 +329,8 @@ export default function Newleads() {
 
   const isNotFound = !leads.length;
 
+  console.log(leads, "leads")
+
   const filteredLeads = leads.filter((lead) => {
     return lead.applicationDetails.applicantName.toLowerCase().includes(search.toLowerCase());
   });
@@ -335,6 +338,10 @@ export default function Newleads() {
   const newLeadsOnly = filteredLeads.filter((lead) => {
     return lead.registrationFees.serviceType === '';
   });
+
+  console.log(filteredLeads, "filteredLeads");
+
+  console.log(newLeadsOnly, "newLeadsOnly")
 
   const handleSearch = (e) => {
     console.log(e.target.value, 'e.target.value');

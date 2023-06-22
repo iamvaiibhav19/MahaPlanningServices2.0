@@ -47,7 +47,7 @@ exports.createFormWithoutDoc1 = async (req, res) => {
       content: `
       <h1
         style="text-align: center; margin-top: 10px; font-size: 25px; font-weight: 700; color: rgb(197, 194, 21);"
-    >MAHA PLANNING SERVICES</h1>
+    >LeadMagnetix</h1>
 
     <table
         style="width: 100%; border: 1px solid black; border-collapse: collapse; margin-top: 20px;"

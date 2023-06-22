@@ -1,0 +1,228 @@
+commit 74a2ece8e3b205f51df07a3849a39739e22c9830
+Merge: 575d52654 92eb08d10
+Author: Vaibhav Magar <84627904+iamvaiibhav19@users.noreply.github.com>
+Date:   Sun May 14 17:52:16 2023 +0530
+
+    Merge pull request #116 from navgurukul/dev
+    
+    Merging New Changes from Dev
+
+commit 92eb08d1004dbd02ea168f7289ad2ba146b006b7
+Merge: de7ce7b08 89357b895
+Author: Vaibhav Magar <84627904+iamvaiibhav19@users.noreply.github.com>
+Date:   Sun May 14 17:49:20 2023 +0530
+
+    Merge pull request #114 from navgurukul/close-tour
+
+    close tour and no icon feedback
+
+commit 89357b895c6cb9cf858aa4ce74887bb2be4c92bf (origin/close-tour)
+Merge: ee96c016e de7ce7b08
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Sun May 14 17:47:43 2023 +0530
+
+    Merge branch 'dev' of https://github.com/navgurukul/scratch into close-tour
+
+commit de7ce7b0862eee709ea45edfdceaadb3bbce3a4d
+Merge: 90ae732b6 1e71465bc
+Author: Vaibhav Magar <84627904+iamvaiibhav19@users.noreply.github.com>
+Date:   Sun May 14 17:46:17 2023 +0530
+
+    Merge pull request #113 from navgurukul/project-alert
+
+    Alert Added On BackButton
+
+commit 1e71465bc56b45a890a0afa11d6b59a507b63905 (origin/project-alert)
+Merge: d802abbca 90ae732b6
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Sun May 14 17:45:12 2023 +0530
+
+    Merge branch 'dev' of https://github.com/navgurukul/scratch into project-alert
+
+commit 90ae732b65d3a8556da378981f3a1db52380e60a
+Merge: 86b6e9f1c a6f350cdf
+Author: Vaibhav Magar <84627904+iamvaiibhav19@users.noreply.github.com>
+Date:   Sun May 14 17:44:03 2023 +0530
+
+    Merge pull request #111 from navgurukul/project-same-name
+
+    Project same name - added a File Already Exists Alert
+
+commit a6f350cdf3ac13299a7422333386d22e9d63d64f (origin/project-same-name)
+Merge: e93597795 86b6e9f1c
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Sun May 14 17:39:11 2023 +0530
+
+    Merge branch 'dev' of https://github.com/navgurukul/scratch into project-same-name
+
+commit 575d52654d05beffd5a22b1f685879e56b83937c
+Merge: e97d0061a b0c112aea
+Author: Vaibhav Magar <84627904+iamvaiibhav19@users.noreply.github.com>
+Date:   Sat Apr 22 15:44:52 2023 +0530
+
+    Merge pull request #110 from navgurukul/dev
+
+    merging-dev-with-main
+
+commit b0c112aeafc92189e902ef8e73669f92b249c9e8
+Merge: ae31c1309 e97d0061a
+Author: Vaibhav Magar <84627904+iamvaiibhav19@users.noreply.github.com>
+Date:   Sat Apr 22 15:44:44 2023 +0530
+
+    Merge branch 'main' into dev
+
+commit e97d0061ab48a9ac7dc81651774d188f42fe5911
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Sat Apr 22 14:50:03 2023 +0530
+
+    api-env-prod
+
+commit ae31c1309599afbcad484a4e76bddf463afd7e05
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Sat Apr 22 14:43:36 2023 +0530
+
+    api-env-dev
+
+commit 83940a2c4064e19150f6fba8673d19930e188b07
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Fri Apr 21 19:21:32 2023 +0530
+
+    fixed-mobileconnect-path
+
+commit 7760eb35ab967a372364b431ec0a52d5412a65cc
+Merge: e6ec778b9 236df8ea1
+Author: Vaibhav Magar <84627904+iamvaiibhav19@users.noreply.github.com>
+Date:   Fri Apr 21 19:07:36 2023 +0530
+
+    Merge pull request #108 from navgurukul/design-card
+
+    fixed-css
+
+commit 236df8ea1d6b75d533e5dd2a984ed85f9014b71c
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Fri Apr 21 19:06:28 2023 +0530
+
+    fixed-css
+
+commit e6ec778b99c7f04981221cd23d4e65adf806727b
+Merge: 89fc23eea 495516f88
+Author: Vaibhav Magar <84627904+iamvaiibhav19@users.noreply.github.com>
+Date:   Fri Apr 21 18:53:45 2023 +0530
+
+    Merge pull request #106 from navgurukul/design-card
+
+    Card Design for HomePage
+
+commit 495516f88cddc6716cce53f3e369d490ab335387
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Fri Apr 21 18:53:05 2023 +0530
+
+    removed-greenflagoverlay
+
+commit 91f1ad7e971841bbd9b7788ff6b8eb66d61c5c0f
+Merge: bc9580f50 89fc23eea
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Fri Apr 21 18:46:38 2023 +0530
+
+    Merge branch 'web-dev' of https://github.com/navgurukul/scratch into design-card
+
+commit bc9580f50e84584bf277b7e002b77be90b97384f
+Merge: 1794b7f3f e786b42e4
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Fri Apr 21 18:32:51 2023 +0530
+
+    Merge branch 'web-dev' of https://github.com/navgurukul/scratch into design-card
+
+commit c5529bb6146fbdcd8cb8feb494926e8b2a94eb63
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Wed Apr 19 20:51:55 2023 +0530
+
+    fixed-capture-not-working + redirecting-to-backdropsettings
+
+commit bc8ddb3ad01c5b1058319217baecc40e16f896b8
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Mon Apr 17 12:17:02 2023 +0530
+
+    fixed-img-path for web-android
+
+commit 981569c808ab90058461b1ebfd3eb6845467dfc9
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Tue Apr 11 12:47:11 2023 +0530
+
+    debug-randomColor-box
+
+commit bbc7e186604ff1ad9c3ad3400eb9e2f12f3ca840
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Tue Apr 11 12:37:49 2023 +0530
+
+    remove-l10.js
+
+commit 6cef7f12120ea05d69814fa41c16ff5f9bd9c0e6
+Merge: 488405947 3dfdee53c
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Mon Apr 10 22:36:30 2023 +0530
+
+    Merge branch 'web-dev' of https://github.com/navgurukul/scratch into web-dev
+
+commit 48840594758fb0ff7c85e0032b0e97649caeb47f
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Mon Apr 10 22:36:23 2023 +0530
+
+    diff-sync-done
+
+commit 22854cd3360572f589edf7bcb5fb666203201969
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Mon Apr 10 14:18:44 2023 +0530
+
+    diff-sync-done
+
+commit 71004d7e48b4233aaabd0497c0bc134aad5f8398
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Mon Apr 10 12:41:02 2023 +0530
+
+    diff-sync
+
+commit 97530f187efd9875422f5019ba2af36aa2a74821
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Mon Apr 10 12:15:57 2023 +0530
+
+    df-sync
+
+commit 972943ced5accc3685643be30ad7448860f9a763
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Mon Apr 10 11:54:02 2023 +0530
+
+    df-sync
+
+commit 04edf8d260f0edeba16f4b636afec8bfdabe798b
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Mon Apr 10 11:37:20 2023 +0530
+
+    mobile-connect
+
+commit 3f0742808440b545327728e109c8a406ec3cef1d
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Mon Apr 10 11:24:46 2023 +0530
+
+    minor-changes
+
+commit fd2505efd625e309f5ab7ed25fd8ea3cc39f35c4
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Mon Apr 10 11:23:01 2023 +0530
+
+    build-command
+
+commit 4173a1a8a0bb4155c1033ecfe5527b0d0f8ba7c5
+Merge: b7132ff4f 81213763b
+Author: Vaibhav Magar <84627904+iamvaiibhav19@users.noreply.github.com>
+Date:   Sat Apr 1 13:23:36 2023 +0530
+
+    Merge pull request #72 from navgurukul/load-from-computer
+
+    Load from computer
+
+commit 81213763b9fa221d42acea4496605739a0cc6c66
+Author: Vaibhav Magar <vaibhavmagar1901@gmail.com>
+Date:   Sat Apr 1 13:22:24 2023 +0530
+
+    load-project-func

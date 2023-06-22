@@ -94,7 +94,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
         window.location.href = '/';
       }}
     >
-      <h1>Maha Planning</h1>
+      <h1>LeadMagnetix</h1>
     </div>
   );
 });

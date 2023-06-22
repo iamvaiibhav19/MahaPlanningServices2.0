@@ -47,7 +47,7 @@ export default function Searchbar() {
     <ClickAwayListener onClickAway={handleClose}>
       <div>
         <Typography variant="h4" sx={{ mb: 5 }}>
-          Hi, Welcome to Maha Planning Services
+          Hi, Welcome to LeadMagnetix
         </Typography>
       </div>
     </ClickAwayListener>

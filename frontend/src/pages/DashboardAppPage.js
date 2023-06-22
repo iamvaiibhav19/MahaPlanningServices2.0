@@ -27,7 +27,7 @@ export default function DashboardAppPage() {
   return (
     <>
       <Helmet>
-        <title> Forms | Maha Planning Services </title>
+        <title> Forms | LeadMagnetix </title>
       </Helmet>
 
       <Container

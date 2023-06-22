@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gothic-bastion-369404",
+  "private_key_id": "042ac78381d4154a00bbd8962d41eb173b3841ad",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDa5v9yH2j7VwE3\njNVmSWQV/0Ucz6L7ZCaRr0W7xY3zUmtr4AOnYD1kX8+CksCtqUpE/6+JQHN+jjnv\nwOue+chSknEzeKxlQ/IfGt+/iwTfF7ZAxoaEOwWNwCd1A+nKw/Co+dAC5GFe+Xjr\n9FOyAGJhgAWvA6bPowpLE+Nr7IE5bkQyijwRFBtQzE9qJZ6nd3ZIP3H96L9gkCS/\njEx/KmL3Q805V/Y6MeRPtYhp94hfErK3uYsFRzneXYTQP1bR/7o0Pg33QC/bhYzP\nvrCOqokOeKMFn+vyU+YVoS9qDX5YZ1oKLB7KTEitr3lqCiE58k2phz4qHbZDZbMT\nmw6lrXkTAgMBAAECggEAC6TJ5aoiDWx9VhUZrM0uk7T2Wif5RWH4YzttfCVv/Yde\ny2gpCZgm69Xk1c80jIg6uRzYm3ZgLlUmY8hhQB2NOEct2k0K7oAEuv7U8/1TDwLV\n4PAua44wJ3AXKTRCFVUC0honpF+9hi3C7toaMZevo/wJUVviXZ0QiRnPuQflf8Zy\njaU+cH4oAoFrhhKBT/y/aHXqdD79kmYdTrBkTHI9DGvjG3tGLlk+2tv78fUKKu9o\ncvZ2V+BlTNS1UtgViDsNiiUEXKl8y74rZj0c19jkTljvC5JBs5nGLsq644Ipox5L\ncw4awDvyr24G117zxSZmZthg4k303ZAAdZKX2UUuQQKBgQDx3zI093C36LexS4R7\nduaD3j5QWKlUqJW+L90VWEFg5LA3TI93JFF6aIacw77uPWg0WgDhOdTU6Gsc0KZZ\nxu5agFapHRofv1WEay0V+qj14wZ+rCzmVhytoUYoxKmnCn+SP1osenEkNxJdd4V5\nE6AuKAY1TDueszhNDxxU28G1cQKBgQDnsFRZg+5BuVfiKML2pqXY6pFwzFtWDewH\nVBN1EilgK3nq3S/F5/KJnraSgGcBPQP8D/Vfc7WTbfESsq32tF6lYSxjHPyvOvXJ\ngEpKdjXZuYcwgLc5d4kxEbySvt5lYi3MGW4WRWBvj60+zO8OXa3zpW5BN0RpQpCJ\nTGK3J7KEwwKBgD6jGpF08w/tiIS1ld2TcSb9Sw3rqA5wijbylkKM1IGPN8NaZFzq\nXt9galv2pV91L6M/G7M4EtIATpzru+jMB7YQPmEVVEqcdj0QtGBYxaDH5kqvtAEC\nk/KzLUQpifXkVh09otCZ9Or4CB2EcmBkoLrTSqhK0bXLm+z42NFxB71BAoGBAMPk\n/yzAtA62G2yJcm8B8HA7xMVOxFs6YjrAB8OQm5NIr0i5w87dkuBxZYTxNCaD5H6X\nL6yJNRl2d8KLeTOCxhOm2dTjiXLPs0mwQyA6WsXAbGHCMylPvJvUl1CsOXYXUQmk\n5sPF3Qf2v1C+DdJjutSrJ1HU3O7y7Sppf33E/tfpAoGBAJh+THW10eUVBpzPgkRB\nvO8hi5RP7tsPmP9LHugtQisLoBI+2BoGWNAqYP0+0OOtedaoadNLmssmNbjoJa86\nlrTWWZOkKb98ZREXOTurVEKLeSdmgVNxsKdMALRvSOzf2IfC/kAqEql1s/sLwG2P\nlh1IKR5PXZvluNHhsrA9BmWh\n-----END PRIVATE KEY-----\n",
+  "client_email": "googledrive@gothic-bastion-369404.iam.gserviceaccount.com",
+  "client_id": "115843062601639588253",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/googledrive%40gothic-bastion-369404.iam.gserviceaccount.com"
+}
