@@ -46,8 +46,6 @@ import { useContext } from 'react';
 import DropFileInput from '../pages/drop-file-input/DropFileInput';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 
-// ----------------------------------------------------------------------
-
 const TABLE_HEAD = [
   { id: 'no', label: 'Application No.', alignRight: false },
   { id: 'name', label: 'Applicant Name', alignRight: false },
@@ -65,8 +63,6 @@ const TABLE_HEAD = [
   { id: 'Documents', label: 'Documents', alignRight: false },
   { id: '', label: 'Action', alignRight: false },
 ];
-
-// ----------------------------------------------------------------------
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -99,7 +95,7 @@ function applySortFilter(array, comparator, query) {
 
 export default function Newleads() {
   const token = localStorage.getItem('token');
-  const { user } = useContext(UserContext);
+  const [user, setUser] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [leadId, setLeadId] = useState('');
 
@@ -107,6 +103,23 @@ export default function Newleads() {
   console.log('user', user);
 
   console.log('this is admin loead');
+
+  async function getUser() {
+    //cookies
+    const config = {
+      withCredentials: true,
+      headers: {
+        token: token,
+      },
+    };
+
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/profile`, config);
+    setUser(res.data.user);
+  }
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   const handleEditLead = () => {
     const config = {
@@ -352,10 +365,6 @@ export default function Newleads() {
   const onFileChange = (files) => {
     console.log(files);
   };
-
-  useEffect(() => {
-    getLeads();
-  }, []);
 
   return (
     <>

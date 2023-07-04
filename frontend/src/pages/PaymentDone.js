@@ -99,7 +99,7 @@ function applySortFilter(array, comparator, query) {
 
 export default function Newleads() {
   const token = localStorage.getItem('token');
-  const { user } = useContext(UserContext);
+  const [user, setUser] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [leadId, setLeadId] = useState('');
 
@@ -107,6 +107,25 @@ export default function Newleads() {
   console.log('user', user);
 
   console.log('this is admin loead');
+
+  // const token = localStorage.getItem('token');
+
+  async function getUser() {
+    //cookies
+    const config = {
+      withCredentials: true,
+      headers: {
+        token: token,
+      },
+    };
+
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/profile`, config);
+    setUser(res.data.user);
+  }
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   const handleEditLead = () => {
     const config = {
@@ -219,7 +238,7 @@ export default function Newleads() {
         token: token,
       },
     };
-    console.log(user?.role, 'user?.role');
+    console.log(user?.role, 'user?.role in payment done');
     const getReq = user?.role === 'admin' ? '/allLeads' : '/leads/coordinator';
 
     axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1${getReq}`, config).then((res) => {
@@ -332,9 +351,13 @@ export default function Newleads() {
     return lead.applicationDetails.applicantName.toLowerCase().includes(search.toLowerCase());
   });
 
+  console.log(filteredLeads, 'filteredLeads');
+
   const paymendDoneLeads = filteredLeads.filter((lead) => {
     return lead.paymentInfo.paymentStatus === 'done';
   });
+
+  console.log(paymendDoneLeads, 'paymendDoneLeads');
 
   const handleSearch = (e) => {
     console.log(e.target.value, 'e.target.value');
@@ -353,9 +376,9 @@ export default function Newleads() {
     console.log(files);
   };
 
-  useEffect(() => {
-    getLeads();
-  }, []);
+  // useEffect(() => {
+  //   getLeads();
+  // }, []);
 
   return (
     <>

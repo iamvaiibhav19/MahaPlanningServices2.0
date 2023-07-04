@@ -359,10 +359,6 @@ export default function AdminLeads() {
     console.log(files);
   };
 
-  useEffect(() => {
-    getLeads();
-  }, []);
-
   return (
     <>
       <Helmet>
